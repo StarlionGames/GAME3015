@@ -5,7 +5,7 @@
 #include "../../Common/GeometryGenerator.h"
 #include "../../Common/Camera.h"
 #include "FrameResource.h"
-#include "Game.h"
+#include "Game.hpp"
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;

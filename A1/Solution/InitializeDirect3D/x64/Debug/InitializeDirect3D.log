@@ -1,2 +1,1157 @@
-﻿  SceneNode.cpp
-  InitializeDirect3D.vcxproj -> C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\x64\Debug\InitializeDirect3D.exe
+﻿  Enemy.cpp
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.h(4,23): error C2504: 'Entity': base class undefined
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.h(7,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.h(5,23): error C2504: 'Entity': base class undefined
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.h(8,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(11,17): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,6): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,13): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,11): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(26,13): error C2065: 'SceneNode': undeclared identifier
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(26,23): error C2059: syntax error: ','
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(28,11): error C3646: 'mWorldBounds': unknown override specifier
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(28,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(29,11): error C3646: 'mSpawnPosition': unknown override specifier
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(29,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(33,7): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(33,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(33,15): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,77): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,88): error C2059: syntax error: '>'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ')'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ';'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,97): error C2059: syntax error: ')'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,54): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,59): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,34): error C2065: 'ComPtr': undeclared identifier
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,41): error C2275: 'ID3DBlob': expected an expression instead of a type
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2974: 'std::unordered_map': invalid template argument for '_Ty', type expected
+  (compiling source file 'Enemy.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'Enemy.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,49): error C2059: syntax error: '>'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,60): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,50): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Enemy.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'Enemy.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,14): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,25): error C2059: syntax error: '>'
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Enemy.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'Enemy.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'Enemy.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.cpp(17,52): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.cpp(25,25): error C2665: 'std::vector<<error type>,std::allocator<<error type>>>::push_back': no overloaded function could convert all the argument types
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(936,23):
+      could be 'void std::vector<<error type>,std::allocator<<error type>>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=<error type>
+          ]
+          C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.cpp(25,25):
+          'void std::vector<<error type>,std::allocator<<error type>>>::push_back(_Ty &&)': cannot convert argument 1 from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to '_Ty &&'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.cpp(25,44):
+              Reason: cannot convert from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to '_Ty'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.cpp(25,44):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(932,23):
+      or       'void std::vector<<error type>,std::allocator<<error type>>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=<error type>
+          ]
+          C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.cpp(25,25):
+          'void std::vector<<error type>,std::allocator<<error type>>>::push_back(const _Ty &)': cannot convert argument 1 from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to 'const _Ty &'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.cpp(25,44):
+              Reason: cannot convert from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to 'const _Ty'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.cpp(25,44):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.cpp(25,25):
+      while trying to match the argument list '(std::unique_ptr<RenderItem,std::default_delete<RenderItem>>)'
+  
+  Entity.cpp
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.h(4,23): error C2504: 'Entity': base class undefined
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.h(7,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.h(5,23): error C2504: 'Entity': base class undefined
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.h(8,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.h(5,22): error C2504: 'Entity': base class undefined
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.h(8,8): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(11,17): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,6): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,13): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,11): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(26,13): error C2065: 'SceneNode': undeclared identifier
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(26,23): error C2059: syntax error: ','
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(28,11): error C3646: 'mWorldBounds': unknown override specifier
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(28,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(29,11): error C3646: 'mSpawnPosition': unknown override specifier
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(29,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,77): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,88): error C2059: syntax error: '>'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ')'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ';'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,97): error C2059: syntax error: ')'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,54): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,59): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,34): error C2065: 'ComPtr': undeclared identifier
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,41): error C2275: 'ID3DBlob': expected an expression instead of a type
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2974: 'std::unordered_map': invalid template argument for '_Ty', type expected
+  (compiling source file 'Entity.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'Entity.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,49): error C2059: syntax error: '>'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,60): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,50): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Entity.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'Entity.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,14): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,25): error C2059: syntax error: '>'
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Entity.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Entity.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'Entity.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'Entity.cpp')
+  
+  Game.cpp
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\SceneNode.hpp(58,12): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\SceneNode.hpp(88,6): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\SceneNode.hpp(88,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\SceneNode.hpp(88,12): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Entity.hpp(7,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.h(7,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.h(8,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.h(8,8): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(11,17): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,6): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,13): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(7,10): error C2665: 'World::World': no overloaded function could convert all the argument types
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(34,1):
+      could be 'World::World(World &&)'
+          C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(7,10):
+          'World::World(World &&)': cannot convert argument 1 from 'Game *' to 'World &&'
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(7,11):
+              Reason: cannot convert from 'Game *' to 'World'
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(34,1):
+      or       'World::World(const World &)'
+          C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(7,10):
+          'World::World(const World &)': cannot convert argument 1 from 'Game *' to 'const World &'
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(7,11):
+              Reason: cannot convert from 'Game *' to 'const World'
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(7,10):
+      while trying to match the argument list '(Game *)'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(24,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(292,44): error C2039: 'MaterialCB': is not a member of 'FrameResource'
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\FrameResource.h(68,8):
+      see declaration of 'FrameResource'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(308,4): error C3536: 'currMaterialCB': cannot be used before it is initialized
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(645,35): error C2039: 'MaterialCB': is not a member of 'FrameResource'
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\FrameResource.h(68,8):
+      see declaration of 'FrameResource'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(664,44): error C3536: 'matCB': cannot be used before it is initialized
+  Player.cpp
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.h(4,23): error C2504: 'Entity': base class undefined
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.h(7,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.h(5,22): error C2504: 'Entity': base class undefined
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.h(8,8): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(11,17): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,6): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,13): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,11): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(26,13): error C2065: 'SceneNode': undeclared identifier
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(26,23): error C2059: syntax error: ','
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(28,11): error C3646: 'mWorldBounds': unknown override specifier
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(28,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(29,11): error C3646: 'mSpawnPosition': unknown override specifier
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(29,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(31,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(31,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(31,17): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,77): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,88): error C2059: syntax error: '>'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ')'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ';'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,97): error C2059: syntax error: ')'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,54): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,59): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,34): error C2065: 'ComPtr': undeclared identifier
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,41): error C2275: 'ID3DBlob': expected an expression instead of a type
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2974: 'std::unordered_map': invalid template argument for '_Ty', type expected
+  (compiling source file 'Player.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'Player.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,49): error C2059: syntax error: '>'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,60): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,50): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Player.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'Player.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,14): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,25): error C2059: syntax error: '>'
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Player.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'Player.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'Player.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.cpp(17,52): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.cpp(18,39): error C2065: 'mSprite': undeclared identifier
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.cpp(25,25): error C2665: 'std::vector<<error type>,std::allocator<<error type>>>::push_back': no overloaded function could convert all the argument types
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(936,23):
+      could be 'void std::vector<<error type>,std::allocator<<error type>>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=<error type>
+          ]
+          C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.cpp(25,25):
+          'void std::vector<<error type>,std::allocator<<error type>>>::push_back(_Ty &&)': cannot convert argument 1 from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to '_Ty &&'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.cpp(25,44):
+              Reason: cannot convert from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to '_Ty'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.cpp(25,44):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(932,23):
+      or       'void std::vector<<error type>,std::allocator<<error type>>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=<error type>
+          ]
+          C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.cpp(25,25):
+          'void std::vector<<error type>,std::allocator<<error type>>>::push_back(const _Ty &)': cannot convert argument 1 from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to 'const _Ty &'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.cpp(25,44):
+              Reason: cannot convert from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to 'const _Ty'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.cpp(25,44):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.cpp(25,25):
+      while trying to match the argument list '(std::unique_ptr<RenderItem,std::default_delete<RenderItem>>)'
+  
+  SceneNode.cpp
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Entity.hpp(4,23): error C2504: 'SceneNode': base class undefined
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Entity.hpp(7,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Entity.hpp(8,26): error C2061: syntax error: identifier 'XMFLOAT2'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Entity.hpp(10,11): error C3646: 'GetVelocity': unknown override specifier
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Entity.hpp(10,22): error C2059: syntax error: '('
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Entity.hpp(10,30): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Entity.hpp(16,11): error C3646: 'velocity': unknown override specifier
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Entity.hpp(16,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.h(7,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.h(8,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.h(8,8): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(11,17): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,6): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,13): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,11): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(26,13): error C2065: 'SceneNode': undeclared identifier
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(26,23): error C2059: syntax error: ','
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(28,11): error C3646: 'mWorldBounds': unknown override specifier
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(28,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(29,11): error C3646: 'mSpawnPosition': unknown override specifier
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(29,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,77): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,88): error C2059: syntax error: '>'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ')'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ';'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,97): error C2059: syntax error: ')'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,54): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,59): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,34): error C2065: 'ComPtr': undeclared identifier
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,41): error C2275: 'ID3DBlob': expected an expression instead of a type
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2974: 'std::unordered_map': invalid template argument for '_Ty', type expected
+  (compiling source file 'SceneNode.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'SceneNode.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,49): error C2059: syntax error: '>'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,60): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,50): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'SceneNode.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'SceneNode.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,14): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,25): error C2059: syntax error: '>'
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'SceneNode.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'SceneNode.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'SceneNode.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'SceneNode.cpp')
+  
+  Sprite.cpp
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.h(5,23): error C2504: 'Entity': base class undefined
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Player.h(8,9): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.h(5,22): error C2504: 'Entity': base class undefined
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Enemy.h(8,8): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(11,17): error C2061: syntax error: identifier 'Game'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,6): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(24,13): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,11): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(25,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(26,13): error C2065: 'SceneNode': undeclared identifier
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(26,23): error C2059: syntax error: ','
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(28,11): error C3646: 'mWorldBounds': unknown override specifier
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(28,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(29,11): error C3646: 'mSpawnPosition': unknown override specifier
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(29,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(32,8): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(32,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.hpp(32,21): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,77): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,88): error C2059: syntax error: '>'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ')'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ';'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,97): error C2059: syntax error: ')'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,54): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,59): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,34): error C2065: 'ComPtr': undeclared identifier
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,41): error C2275: 'ID3DBlob': expected an expression instead of a type
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2974: 'std::unordered_map': invalid template argument for '_Ty', type expected
+  (compiling source file 'Sprite.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'Sprite.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,49): error C2059: syntax error: '>'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,60): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,50): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Sprite.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'Sprite.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,14): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,25): error C2059: syntax error: '>'
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Sprite.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'Sprite.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'Sprite.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.cpp(20,52): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.cpp(28,25): error C2665: 'std::vector<<error type>,std::allocator<<error type>>>::push_back': no overloaded function could convert all the argument types
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(936,23):
+      could be 'void std::vector<<error type>,std::allocator<<error type>>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=<error type>
+          ]
+          C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.cpp(28,25):
+          'void std::vector<<error type>,std::allocator<<error type>>>::push_back(_Ty &&)': cannot convert argument 1 from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to '_Ty &&'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.cpp(28,44):
+              Reason: cannot convert from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to '_Ty'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.cpp(28,44):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(932,23):
+      or       'void std::vector<<error type>,std::allocator<<error type>>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=<error type>
+          ]
+          C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.cpp(28,25):
+          'void std::vector<<error type>,std::allocator<<error type>>>::push_back(const _Ty &)': cannot convert argument 1 from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to 'const _Ty &'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.cpp(28,44):
+              Reason: cannot convert from 'std::unique_ptr<RenderItem,std::default_delete<RenderItem>>' to 'const _Ty'
+          with
+          [
+              _Ty=<error type>
+          ]
+              C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.cpp(28,44):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Sprite.cpp(28,25):
+      while trying to match the argument list '(std::unique_ptr<RenderItem,std::default_delete<RenderItem>>)'
+  
+  World.cpp
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,77): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,88): error C2059: syntax error: '>'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ')'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,65): error C2144: syntax error: '<error type>' should be preceded by ';'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(42,97): error C2059: syntax error: ')'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(53,54): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(55,59): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,34): error C2065: 'ComPtr': undeclared identifier
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,41): error C2275: 'ID3DBlob': expected an expression instead of a type
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2974: 'std::unordered_map': invalid template argument for '_Ty', type expected
+  (compiling source file 'World.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,7): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'World.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,49): error C2059: syntax error: '>'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(62,60): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,8): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(66,50): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'World.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'World.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(68,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,14): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(70,25): error C2059: syntax error: '>'
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(75,8): error C3646: 'mWorld': unknown override specifier
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(75,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30): error C2065: 'RenderItem': undeclared identifier
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2923: 'std::unique_ptr': 'RenderItem' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'World.cpp')
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,30):
+      see declaration of 'RenderItem'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C2976: 'std::unique_ptr': too few template arguments
+  (compiling source file 'World.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.hpp(78,19): error C3203: 'unique_ptr': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+  (compiling source file 'World.cpp')
+  
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.cpp(28,26): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.cpp(33,41): error C2512: 'Enemy::Enemy': no appropriate default constructor available
+      C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\World.cpp(33,41):
+      while trying to match the argument list '()'
+  
+  Generating Code...

@@ -1,5 +1,5 @@
-#include "SceneNode.h"
-#include "Game.h"
+#include "SceneNode.hpp"
+#include "Game.hpp"
 
 SceneNode::SceneNode(Game* game)
 	: mChildren()
