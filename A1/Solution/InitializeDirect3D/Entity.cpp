@@ -1,19 +1,18 @@
 #include "Entity.hpp"
-#include "Game.hpp"
 
-Entity::Entity(Game* game) : SceneNode(game), mVelocity(0,0)
+Entity::Entity(Game* game) : SceneNode(game), mVelocity(0, 0)
 {
 }
 
-void Entity::setVelocity(XMFLOAT2 v) 
+void Entity::setVelocity(XMFLOAT2 velocity)
 {
-	mVelocity = v;
+	mVelocity = velocity;
 }
 
-void Entity::setVelocity(float x, float y)
+void Entity::setVelocity(float vx, float vy)
 {
-	mVelocity.x = x;
-	mVelocity.y = y;
+	mVelocity.x = vx;
+	mVelocity.y = vy;
 }
 
 XMFLOAT2 Entity::getVelocity() const
@@ -21,13 +20,13 @@ XMFLOAT2 Entity::getVelocity() const
 	return mVelocity;
 }
 
-void Entity::updateCurrent(const GameTimer& timer)
+void Entity::updateCurrent(const GameTimer& gt) 
 {
-	XMFLOAT2 velo;
-	velo.x = mVelocity.x * timer.DeltaTime();
-	velo.y = mVelocity.y * timer.DeltaTime();
+	XMFLOAT2 mV;
+	mV.x = mVelocity.x * gt.DeltaTime();
+	mV.y = mVelocity.y * gt.DeltaTime();
 
-	move(velo.x, velo.y, 0);
+	move(mV.x, mV.y, 0);
 
 	renderer->World = getWorldTransform();
 	renderer->NumFramesDirty++;

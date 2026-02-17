@@ -1,36 +1,38 @@
 #pragma once
 #include "SceneNode.hpp"
-#include "Player.hpp"
-#include "Enemy.hpp"
-#include "Sprite.h"
+#include "Aircraft.hpp"
+#include "SpriteNode.h"
 
-class World
+class World 
 {
-public: 
-    explicit World(Game* window);
-	void update(const GameTimer& gt);
-	void draw();
+public:
+	explicit							World(Game* window);
+	void								update(const GameTimer& gt);
+	void								draw();
 
-	void buildScene();
+	//void								loadTextures();
+	void								buildScene();
+
 
 private:
-	enum Layer {
+	enum Layer
+	{
 		Background,
 		Air,
 		LayerCount
 	};
 
-	Game* mGame;
 
-	SceneNode* mSceneGraph;
+private:
+	Game*								mGame;
+
+	SceneNode*							mSceneGraph;
 	std::array<SceneNode*, LayerCount>	mSceneLayers;
 
-	XMFLOAT4 mWorldBounds;
-	XMFLOAT2 mSpawnPosition;
-	float mScrollSpeed;
-	Player* mPlayer;
-	Sprite* mBackground;
-	Enemy* mEnemy;
-	
+	XMFLOAT4							mWorldBounds;
+	XMFLOAT2		    				mSpawnPosition;
+	float								mScrollSpeed;
+	Aircraft*							mPlayerAircraft;
+	SpriteNode*							mBackground;
+	Aircraft*							mEnemy;
 };
-

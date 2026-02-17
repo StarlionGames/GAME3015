@@ -289,7 +289,7 @@ void Game::UpdateObjectCBs(const GameTimer& gt)
 
 void Game::UpdateMaterialCBs(const GameTimer& gt)
 {
-	auto currMaterialCB = mCurrFrameResource->MaterialCB.get();
+	auto currMaterialCB = mCurrFrameResource->MaterialBuffer.get();
 	for (auto& e : mMaterials)
 	{
 		// Only update the cbuffer data if the constants have changed.  If the cbuffer
@@ -299,11 +299,13 @@ void Game::UpdateMaterialCBs(const GameTimer& gt)
 		{
 			XMMATRIX matTransform = XMLoadFloat4x4(&mat->MatTransform);
 
-			MaterialConstants matConstants;
+			MaterialData matConstants;
 			matConstants.DiffuseAlbedo = mat->DiffuseAlbedo;
 			matConstants.FresnelR0 = mat->FresnelR0;
 			matConstants.Roughness = mat->Roughness;
 			XMStoreFloat4x4(&matConstants.MatTransform, XMMatrixTranspose(matTransform));
+			matConstants.DiffuseMapIndex = mat->DiffuseSrvHeapIndex;
+			matConstants.NormalMapIndex = mat->NormalSrvHeapIndex;
 
 			currMaterialCB->CopyData(mat->MatCBIndex, matConstants);
 
@@ -642,7 +644,7 @@ void Game::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector
 	UINT matCBByteSize = d3dUtil::CalcConstantBufferByteSize(sizeof(MaterialConstants));
 
 	auto objectCB = mCurrFrameResource->ObjectCB->Resource();
-	auto matCB = mCurrFrameResource->MaterialCB->Resource();
+	auto matCB = mCurrFrameResource->MaterialBuffer->Resource();
 
 	// For each render item...
 	for (size_t i = 0; i < ritems.size(); ++i)
