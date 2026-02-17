@@ -2,13 +2,12 @@
 #include "SceneNode.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
-#include "Game.hpp"
 #include "Sprite.h"
 
 class World
 {
 public: 
-	explicit World(Game* window);
+    explicit World(Game* window);
 	void update(const GameTimer& gt);
 	void draw();
 
@@ -22,8 +21,9 @@ private:
 	};
 
 	Game* mGame;
+
 	SceneNode* mSceneGraph;
-	std::array<SceneNode*, LayerCount> mSceneLayers;
+	std::array<SceneNode*, LayerCount>	mSceneLayers;
 
 	XMFLOAT4 mWorldBounds;
 	XMFLOAT2 mSpawnPosition;
@@ -31,5 +31,6 @@ private:
 	Player* mPlayer;
 	Sprite* mBackground;
 	Enemy* mEnemy;
+	
 };
 

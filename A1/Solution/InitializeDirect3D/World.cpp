@@ -37,6 +37,13 @@ void World::buildScene()
 	raptor->setWorldRotation(0, XM_PI, 0);
 	mPlayer->attachChild(std::move(enemy1));
 
+	std::unique_ptr<Enemy> enemy2(new Enemy(mGame));
+	auto raptor2 = enemy2.get();
+	raptor2->setPosition(-0.5, 0, 1);
+	raptor2->setScale(1.0, 1.0, 1.0);
+	raptor2->setWorldRotation(0, XM_PI, 0);
+	mPlayer->attachChild(std::move(enemy2));
+
 	std::unique_ptr<Sprite> backgroundSprite(new Sprite(mGame));
 	mBackground = backgroundSprite.get();
 	//mBackground->setPosition(mWorldBounds.left, mWorldBounds.top);
