@@ -1,3 +1,6 @@
-﻿  SpriteNode.cpp
-C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\SpriteNode.cpp(20,52): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+﻿  Game.cpp
+C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\InitializeDirect3D\Game.cpp(24,21): warning C4305: 'argument': truncation from 'double' to 'float'
+  main.cpp
+  SceneNode.cpp
+  Generating Code...
   InitializeDirect3D.vcxproj -> C:\Users\fangi\Documents\GitHub\GAME3015\A1\Solution\x64\Debug\InitializeDirect3D.exe
