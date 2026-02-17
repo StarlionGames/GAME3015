@@ -19,6 +19,9 @@
     <Filter Include="Engine\Common">
       <UniqueIdentifier>{4da73e88-7b09-42c1-b89e-7222bf705633}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{8cbd1b42-b45a-439d-8083-52c4a5b826dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Common\DDSTextureLoader.cpp">
@@ -54,16 +57,16 @@
     <ClCompile Include="SceneNode.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="World.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sprite.cpp">
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteNode.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -107,16 +110,16 @@
     <ClInclude Include="SceneNode.hpp">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="World.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.hpp">
+    <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sprite.h">
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteNode.h">
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>

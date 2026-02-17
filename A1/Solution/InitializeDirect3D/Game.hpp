@@ -1,5 +1,12 @@
 #include "World.hpp"
 
+enum class RenderLayer : int
+{
+	Opaque = 0,
+	Sky,
+	Count
+};
+
 class Game : public D3DApp
 {
 public:
@@ -73,6 +80,11 @@ private:
 	std::vector<std::unique_ptr<RenderItem>> mAllRitems;
 
 	// Render items divided by PSO.
+	std::vector<RenderItem*> mRitemLayer[(int)RenderLayer::Count];
+
+	UINT mSkyTexHeapIndex = 0;
+
+	// Render items divided by PSO.
 	std::vector<RenderItem*> mOpaqueRitems;
 
 	PassConstants mMainPassCB;
@@ -88,6 +100,8 @@ private:
 	POINT mLastMousePos;
 	Camera mCamera;
 	World mWorld;
+
+	
 
 public:
 	std::vector<std::unique_ptr<RenderItem>>& getRenderItems() { return mAllRitems; }

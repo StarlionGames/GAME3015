@@ -23,21 +23,21 @@ void World::draw()
 
 void World::buildScene()
 {
-	std::unique_ptr<Aircraft> player(new Aircraft(Aircraft::Eagle, mGame));
+	std::unique_ptr<Player> player(new Player(mGame));
 	mPlayerAircraft = player.get();
 	mPlayerAircraft->setPosition(0, 0.1, 0.0);
 	mPlayerAircraft->setScale(0.5, 0.5, 0.5);
 	//mPlayerAircraft->setVelocity(mScrollSpeed, 0.0, 0.0);
 	mSceneGraph->attachChild(std::move(player));
 
-	std::unique_ptr<Aircraft> enemy1(new Aircraft(Aircraft::Raptor, mGame));
+	std::unique_ptr<Enemy> enemy1(new Enemy(mGame));
 	auto raptor = enemy1.get();
 	raptor->setPosition(0.5, 0, 1);
 	raptor->setScale(1.0, 1.0, 1.0);
 	raptor->setWorldRotation(0, XM_PI, 0);
 	mPlayerAircraft->attachChild(std::move(enemy1));
 
-	std::unique_ptr<Aircraft> enemy2(new Aircraft(Aircraft::Raptor, mGame));
+	std::unique_ptr<Enemy> enemy2(new Enemy(mGame));
 	auto raptor2 = enemy2.get();
 	raptor2->setPosition(-0.5, 0, 1);
 	raptor2->setScale(1.0, 1.0, 1.0);

@@ -8,6 +8,29 @@ Game::Game(HINSTANCE hInstance)
 {
 }
 
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
+	PSTR cmdLine, int showCmd)
+{
+	// Enable run-time memory check for debug builds.
+#if defined(DEBUG) | defined(_DEBUG)
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#endif
+
+	try
+	{
+		Game theApp(hInstance);
+		if (!theApp.Initialize())
+			return 0;
+
+		return theApp.Run();
+	}
+	catch (DxException& e)
+	{
+		MessageBox(nullptr, e.ToString().c_str(), L"HR Failed", MB_OK);
+		return 0;
+	}
+}
+
 Game::~Game()
 {
 	if (md3dDevice != nullptr)
@@ -29,6 +52,7 @@ bool Game::Initialize()
 	// Get the increment size of a descriptor in this heap type.  This is hardware specific, 
 	// so we have to query this information.
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
+	mCamera.SetPosition(0.0f, 2.0f, -15.0f);
 
 	LoadTextures();
 	BuildRootSignature();
@@ -129,10 +153,25 @@ void Game::Draw(const GameTimer& gt)
 	mCommandList->SetGraphicsRootSignature(mRootSignature.Get());
 
 	auto passCB = mCurrFrameResource->PassCB->Resource();
-	mCommandList->SetGraphicsRootConstantBufferView(2, passCB->GetGPUVirtualAddress());
+	mCommandList->SetGraphicsRootConstantBufferView(1, passCB->GetGPUVirtualAddress());
 
 	mWorld.draw();
 	DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
+
+	auto matBuffer = mCurrFrameResource->MaterialBuffer->Resource();
+	mCommandList->SetGraphicsRootShaderResourceView(2, matBuffer->GetGPUVirtualAddress());
+
+	CD3DX12_GPU_DESCRIPTOR_HANDLE skyTexDescriptor(mSrvDescriptorHeap->GetGPUDescriptorHandleForHeapStart());
+	skyTexDescriptor.Offset(mSkyTexHeapIndex, mCbvSrvDescriptorSize);
+	mCommandList->SetGraphicsRootDescriptorTable(3, skyTexDescriptor);
+
+	mCommandList->SetGraphicsRootDescriptorTable(4, mSrvDescriptorHeap->GetGPUDescriptorHandleForHeapStart());
+
+	DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::Opaque]);
+
+	mCommandList->SetPipelineState(mSkyPSO.Get());
+	DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::Sky]);
+
 
 	// Indicate a state transition on the resource usage.
 	auto transition2 = CD3DX12_RESOURCE_BARRIER::Transition(CurrentBackBuffer(),
@@ -278,6 +317,7 @@ void Game::UpdateObjectCBs(const GameTimer& gt)
 			ObjectConstants objConstants;
 			XMStoreFloat4x4(&objConstants.World, XMMatrixTranspose(world));
 			XMStoreFloat4x4(&objConstants.TexTransform, XMMatrixTranspose(texTransform));
+			objConstants.MaterialIndex = e->Mat->MatCBIndex;
 
 			currObjectCB->CopyData(e->ObjCBIndex, objConstants);
 
@@ -346,11 +386,11 @@ void Game::UpdateMainPassCB(const GameTimer& gt)
 	mMainPassCB.DeltaTime = gt.DeltaTime();
 	mMainPassCB.AmbientLight = { 0.25f, 0.25f, 0.35f, 1.0f };
 	mMainPassCB.Lights[0].Direction = { 0.57735f, -0.57735f, 0.57735f };
-	mMainPassCB.Lights[0].Strength = { 0.6f, 0.6f, 0.6f };
+	mMainPassCB.Lights[0].Strength = { 0.8f, 0.8f, 0.8f };
 	mMainPassCB.Lights[1].Direction = { -0.57735f, -0.57735f, 0.57735f };
-	mMainPassCB.Lights[1].Strength = { 0.3f, 0.3f, 0.3f };
+	mMainPassCB.Lights[1].Strength = { 0.4f, 0.4f, 0.4f };
 	mMainPassCB.Lights[2].Direction = { 0.0f, -0.707f, -0.707f };
-	mMainPassCB.Lights[2].Strength = { 0.15f, 0.15f, 0.15f };
+	mMainPassCB.Lights[2].Strength = { 0.2f, 0.2f, 0.2f };
 
 	auto currPassCB = mCurrFrameResource->PassCB.get();
 	currPassCB->CopyData(0, mMainPassCB);
@@ -358,6 +398,40 @@ void Game::UpdateMainPassCB(const GameTimer& gt)
 
 void Game::LoadTextures()
 {
+	std::vector<std::string> texNames =
+	{
+		"bricksDiffuseMap",
+		"bricksNormalMap",
+		"tileDiffuseMap",
+		"tileNormalMap",
+		"defaultDiffuseMap",
+		"defaultNormalMap",
+		"skyCubeMap"
+	};
+
+	std::vector<std::wstring> texFilenames =
+	{
+		L"../../Textures/bricks2.dds",
+		L"../../Textures/bricks2_nmap.dds",
+		L"../../Textures/tile.dds",
+		L"../../Textures/tile_nmap.dds",
+		L"../../Textures/white1x1.dds",
+		L"../../Textures/default_nmap.dds",
+		L"../../Textures/snowcube1024.dds"
+	};
+
+	for (int i = 0; i < (int)texNames.size(); ++i)
+	{
+		auto texMap = std::make_unique<Texture>();
+		texMap->Name = texNames[i];
+		texMap->Filename = texFilenames[i];
+		ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+			mCommandList.Get(), texMap->Filename.c_str(),
+			texMap->Resource, texMap->UploadHeap));
+
+		mTextures[texMap->Name] = std::move(texMap);
+	}
+	
 	//Eagle
 	auto EagleTex = std::make_unique<Texture>();
 	EagleTex->Name = "EagleTex";
@@ -391,25 +465,28 @@ void Game::LoadTextures()
 
 void Game::BuildRootSignature()
 {
-	CD3DX12_DESCRIPTOR_RANGE texTable;
-	texTable.Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0);
+	CD3DX12_DESCRIPTOR_RANGE texTable0;
+	texTable0.Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0);
+
+	CD3DX12_DESCRIPTOR_RANGE texTable1;
+	texTable1.Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 10, 1, 0);
 
 	// Root parameter can be a table, root descriptor or root constants.
-	CD3DX12_ROOT_PARAMETER slotRootParameter[4];
+	CD3DX12_ROOT_PARAMETER slotRootParameter[5];
 
 	// Perfomance TIP: Order from most frequent to least frequent.
-	slotRootParameter[0].InitAsDescriptorTable(1, &texTable, D3D12_SHADER_VISIBILITY_PIXEL);
-	slotRootParameter[1].InitAsConstantBufferView(0);
-	slotRootParameter[2].InitAsConstantBufferView(1);
-	slotRootParameter[3].InitAsConstantBufferView(2);
+	slotRootParameter[0].InitAsConstantBufferView(0);
+	slotRootParameter[1].InitAsConstantBufferView(1);
+	slotRootParameter[2].InitAsShaderResourceView(0, 1);
+	slotRootParameter[3].InitAsDescriptorTable(1, &texTable0, D3D12_SHADER_VISIBILITY_PIXEL);
+	slotRootParameter[4].InitAsDescriptorTable(1, &texTable1, D3D12_SHADER_VISIBILITY_PIXEL);
+
 
 	auto staticSamplers = GetStaticSamplers();
 
 	// A root signature is an array of root parameters.
-	//The Init function of the CD3DX12_ROOT_SIGNATURE_DESC class has two parameters that allow you to
-		//define an array of so - called static samplers your application can use.
-	CD3DX12_ROOT_SIGNATURE_DESC rootSigDesc(4, slotRootParameter,
-		(UINT)staticSamplers.size(), staticSamplers.data(),  //6 samplers!
+	CD3DX12_ROOT_SIGNATURE_DESC rootSigDesc(5, slotRootParameter,
+		(UINT)staticSamplers.size(), staticSamplers.data(),
 		D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
 
 	// create a root signature with a single slot which points to a descriptor range consisting of a single constant buffer
@@ -435,64 +512,69 @@ void Game::BuildRootSignature()
 //can set to a root signature parameter slot for use by the shader programs.
 void Game::BuildDescriptorHeaps()
 {
-	//
-	// Create the SRV heap.
-	//
 	D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
-	srvHeapDesc.NumDescriptors = 3;
+	srvHeapDesc.NumDescriptors = 10;
 	srvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
 	srvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 	ThrowIfFailed(md3dDevice->CreateDescriptorHeap(&srvHeapDesc, IID_PPV_ARGS(&mSrvDescriptorHeap)));
 
-	//
-	// Fill out the heap with actual descriptors.
-	//
 	CD3DX12_CPU_DESCRIPTOR_HANDLE hDescriptor(mSrvDescriptorHeap->GetCPUDescriptorHandleForHeapStart());
 
-	auto EagleTex = mTextures["EagleTex"]->Resource;
-	auto RaptorTex = mTextures["RaptorTex"]->Resource;
-	auto DesertTex = mTextures["DesertTex"]->Resource;
+	std::vector<ComPtr<ID3D12Resource>> tex2DList =
+	{
+		mTextures["bricksDiffuseMap"]->Resource,
+		mTextures["bricksNormalMap"]->Resource,
+		mTextures["tileDiffuseMap"]->Resource,
+		mTextures["tileNormalMap"]->Resource,
+		mTextures["defaultDiffuseMap"]->Resource,
+		mTextures["defaultNormalMap"]->Resource,
+		mTextures["EagleTex"]->Resource,
+		mTextures["RaptorTex"]->Resource,
+	    mTextures["DesertTex"]->Resource
+	};
 
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
-
-	//This mapping enables the shader resource view (SRV) to choose how memory gets routed to the 4 return components in a shader after a memory fetch.
-	//When a texture is sampled in a shader, it will return a vector of the texture data at the specified texture coordinates.
-	//This field provides a way to reorder the vector components returned when sampling the texture.
-	//D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING  will not reorder the components and just return the data in the order it is stored in the texture resource.
 	srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
-
-	srvDesc.Format = EagleTex->GetDesc().Format;
-
 	srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;
 	srvDesc.Texture2D.MostDetailedMip = 0;
-	//The number of mipmap levels to view, starting at MostDetailedMip.This field, along with MostDetailedMip allows us to
-	//specify a subrange of mipmap levels to view.You can specify - 1 to indicate to view
-	//all mipmap levels from MostDetailedMip down to the last mipmap level.
-
-	srvDesc.Texture2D.MipLevels = EagleTex->GetDesc().MipLevels;
-
-	//Specifies the minimum mipmap level that can be accessed. 0.0 means all the mipmap levels can be accessed.
-	//Specifying 3.0 means mipmap levels 3.0 to MipCount - 1 can be accessed.
 	srvDesc.Texture2D.ResourceMinLODClamp = 0.0f;
 
-	md3dDevice->CreateShaderResourceView(EagleTex.Get(), &srvDesc, hDescriptor);
+	for (UINT i = 0; i < (UINT)tex2DList.size(); ++i)
+	{
+		srvDesc.Format = tex2DList[i]->GetDesc().Format;
+		srvDesc.Texture2D.MipLevels = tex2DList[i]->GetDesc().MipLevels;
+		md3dDevice->CreateShaderResourceView(tex2DList[i].Get(), &srvDesc, hDescriptor);
 
-	//Raptor Descriptor
-	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
-	srvDesc.Format = RaptorTex->GetDesc().Format;
-	md3dDevice->CreateShaderResourceView(RaptorTex.Get(), &srvDesc, hDescriptor);
+		hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+	}
 
-	//Desert Descriptor
-	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
-	srvDesc.Format = DesertTex->GetDesc().Format;
-	md3dDevice->CreateShaderResourceView(DesertTex.Get(), &srvDesc, hDescriptor);
+	auto skyCubeMap = mTextures["skyCubeMap"]->Resource;
+	srvDesc = {};
+	srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
+	srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURECUBE;
+	srvDesc.TextureCube.MostDetailedMip = 0;
+	srvDesc.TextureCube.MipLevels = skyCubeMap->GetDesc().MipLevels;
+	srvDesc.TextureCube.ResourceMinLODClamp = 0.0f;
+	srvDesc.Format = skyCubeMap->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(skyCubeMap.Get(), &srvDesc, hDescriptor);
 
+	mSkyTexHeapIndex = (UINT)tex2DList.size();
 }
 
 void Game::BuildShadersAndInputLayout()
 {
+	const D3D_SHADER_MACRO alphaTestDefines[] =
+	{
+		"ALPHA_TEST", "1",
+		NULL, NULL
+	};
+	
 	mShaders["standardVS"] = d3dUtil::CompileShader(L"Shaders\\Default.hlsl", nullptr, "VS", "vs_5_1");
 	mShaders["opaquePS"] = d3dUtil::CompileShader(L"Shaders\\Default.hlsl", nullptr, "PS", "ps_5_1");
+
+	mShaders["skyVS"] = d3dUtil::CompileShader(L"Shaders\\Sky.hlsl", nullptr, "VS", "vs_5_1");
+	mShaders["skyPS"] = d3dUtil::CompileShader(L"Shaders\\Sky.hlsl", nullptr, "PS", "ps_5_1");
+
 
 	mInputLayout =
 	{
@@ -501,29 +583,95 @@ void Game::BuildShadersAndInputLayout()
 		//step3
 		//The texture coordinates determine what part of the texture gets mapped on the triangles.
 		{ "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, 24, D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
+		{ "TANGENT", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 32, D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 }
 	};
 }
 
 void Game::BuildShapeGeometry()
 {
 	GeometryGenerator geoGen;
-	GeometryGenerator::MeshData box = geoGen.CreateBox(1, 0, 1, 1);
+	GeometryGenerator::MeshData box = geoGen.CreateBox(1.0f, 1.0f, 1.0f, 3);
+	GeometryGenerator::MeshData grid = geoGen.CreateGrid(20.0f, 30.0f, 60, 40);
+	GeometryGenerator::MeshData sphere = geoGen.CreateSphere(0.5f, 20, 20);
+	GeometryGenerator::MeshData cylinder = geoGen.CreateCylinder(0.5f, 0.3f, 3.0f, 20, 20);
+
+	UINT boxVertexOffset = 0;
+	UINT gridVertexOffset = (UINT)box.Vertices.size();
+	UINT sphereVertexOffset = gridVertexOffset + (UINT)grid.Vertices.size();
+	UINT cylinderVertexOffset = sphereVertexOffset + (UINT)sphere.Vertices.size();
+
+	UINT boxIndexOffset = 0;
+	UINT gridIndexOffset = (UINT)box.Indices32.size();
+	UINT sphereIndexOffset = gridIndexOffset + (UINT)grid.Indices32.size();
+	UINT cylinderIndexOffset = sphereIndexOffset + (UINT)sphere.Indices32.size();
+
 	SubmeshGeometry boxSubmesh;
 	boxSubmesh.IndexCount = (UINT)box.Indices32.size();
-	boxSubmesh.StartIndexLocation = 0;
-	boxSubmesh.BaseVertexLocation = 0;
+	boxSubmesh.StartIndexLocation = boxIndexOffset;
+	boxSubmesh.BaseVertexLocation = boxVertexOffset;
 
+	SubmeshGeometry gridSubmesh;
+	gridSubmesh.IndexCount = (UINT)grid.Indices32.size();
+	gridSubmesh.StartIndexLocation = gridIndexOffset;
+	gridSubmesh.BaseVertexLocation = gridVertexOffset;
 
-	std::vector<Vertex> vertices(box.Vertices.size());
+	SubmeshGeometry sphereSubmesh;
+	sphereSubmesh.IndexCount = (UINT)sphere.Indices32.size();
+	sphereSubmesh.StartIndexLocation = sphereIndexOffset;
+	sphereSubmesh.BaseVertexLocation = sphereVertexOffset;
 
-	for (size_t i = 0; i < box.Vertices.size(); ++i)
+	SubmeshGeometry cylinderSubmesh;
+	cylinderSubmesh.IndexCount = (UINT)cylinder.Indices32.size();
+	cylinderSubmesh.StartIndexLocation = cylinderIndexOffset;
+	cylinderSubmesh.BaseVertexLocation = cylinderVertexOffset;
+
+	auto totalVertexCount =
+		box.Vertices.size() +
+		grid.Vertices.size() +
+		sphere.Vertices.size() +
+		cylinder.Vertices.size();
+
+	std::vector<Vertex> vertices(totalVertexCount);
+
+	UINT k = 0;
+	for (size_t i = 0; i < box.Vertices.size(); ++i, ++k)
 	{
-		vertices[i].Pos = box.Vertices[i].Position;
-		vertices[i].Normal = box.Vertices[i].Normal;
-		vertices[i].TexC = box.Vertices[i].TexC;
+		vertices[k].Pos = box.Vertices[i].Position;
+		vertices[k].Normal = box.Vertices[i].Normal;
+		vertices[k].TexC = box.Vertices[i].TexC;
+		vertices[k].TangentU = box.Vertices[i].TangentU;
 	}
 
-	std::vector<std::uint16_t> indices = box.GetIndices16();
+
+	for (size_t i = 0; i < grid.Vertices.size(); ++i, ++k)
+	{
+		vertices[k].Pos = grid.Vertices[i].Position;
+		vertices[k].Normal = grid.Vertices[i].Normal;
+		vertices[k].TexC = grid.Vertices[i].TexC;
+		vertices[k].TangentU = grid.Vertices[i].TangentU;
+	}
+
+	for (size_t i = 0; i < sphere.Vertices.size(); ++i, ++k)
+	{
+		vertices[k].Pos = sphere.Vertices[i].Position;
+		vertices[k].Normal = sphere.Vertices[i].Normal;
+		vertices[k].TexC = sphere.Vertices[i].TexC;
+		vertices[k].TangentU = sphere.Vertices[i].TangentU;
+	}
+
+	for (size_t i = 0; i < cylinder.Vertices.size(); ++i, ++k)
+	{
+		vertices[k].Pos = cylinder.Vertices[i].Position;
+		vertices[k].Normal = cylinder.Vertices[i].Normal;
+		vertices[k].TexC = cylinder.Vertices[i].TexC;
+		vertices[k].TangentU = cylinder.Vertices[i].TangentU;
+	}
+
+	std::vector<std::uint16_t> indices;
+	indices.insert(indices.end(), std::begin(box.GetIndices16()), std::end(box.GetIndices16()));
+	indices.insert(indices.end(), std::begin(grid.GetIndices16()), std::end(grid.GetIndices16()));
+	indices.insert(indices.end(), std::begin(sphere.GetIndices16()), std::end(sphere.GetIndices16()));
+	indices.insert(indices.end(), std::begin(cylinder.GetIndices16()), std::end(cylinder.GetIndices16()));
 
 	const UINT vbByteSize = (UINT)vertices.size() * sizeof(Vertex);
 	const UINT ibByteSize = (UINT)indices.size() * sizeof(std::uint16_t);
@@ -549,6 +697,10 @@ void Game::BuildShapeGeometry()
 	geo->IndexBufferByteSize = ibByteSize;
 
 	geo->DrawArgs["box"] = boxSubmesh;
+	geo->DrawArgs["grid"] = gridSubmesh;
+	geo->DrawArgs["sphere"] = sphereSubmesh;
+	geo->DrawArgs["cylinder"] = cylinderSubmesh;
+
 
 	mGeometries[geo->Name] = std::move(geo);
 }
@@ -557,9 +709,6 @@ void Game::BuildPSOs()
 {
 	D3D12_GRAPHICS_PIPELINE_STATE_DESC opaquePsoDesc;
 
-	//
-	// PSO for opaque objects.
-	//
 	ZeroMemory(&opaquePsoDesc, sizeof(D3D12_GRAPHICS_PIPELINE_STATE_DESC));
 	opaquePsoDesc.InputLayout = { mInputLayout.data(), (UINT)mInputLayout.size() };
 	opaquePsoDesc.pRootSignature = mRootSignature.Get();
@@ -584,6 +733,25 @@ void Game::BuildPSOs()
 	opaquePsoDesc.SampleDesc.Quality = m4xMsaaState ? (m4xMsaaQuality - 1) : 0;
 	opaquePsoDesc.DSVFormat = mDepthStencilFormat;
 	ThrowIfFailed(md3dDevice->CreateGraphicsPipelineState(&opaquePsoDesc, IID_PPV_ARGS(&mOpaquePSO)));
+
+	D3D12_GRAPHICS_PIPELINE_STATE_DESC skyPsoDesc = opaquePsoDesc;
+
+	skyPsoDesc.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
+
+	skyPsoDesc.DepthStencilState.DepthFunc = D3D12_COMPARISON_FUNC_LESS_EQUAL;
+	skyPsoDesc.pRootSignature = mRootSignature.Get();
+	skyPsoDesc.VS =
+	{
+		reinterpret_cast<BYTE*>(mShaders["skyVS"]->GetBufferPointer()),
+		mShaders["skyVS"]->GetBufferSize()
+	};
+	skyPsoDesc.PS =
+	{
+		reinterpret_cast<BYTE*>(mShaders["skyPS"]->GetBufferPointer()),
+		mShaders["skyPS"]->GetBufferSize()
+	};
+	ThrowIfFailed(md3dDevice->CreateGraphicsPipelineState(&skyPsoDesc, IID_PPV_ARGS(&mSkyPSO)));
+
 }
 
 void Game::BuildFrameResources()
@@ -594,39 +762,76 @@ void Game::BuildFrameResources()
 			1, (UINT)mAllRitems.size(), (UINT)mMaterials.size()));
 	}
 }
-//step13
+
 void Game::BuildMaterials()
 {
+	auto bricks0 = std::make_unique<Material>();
+	bricks0->Name = "bricks0";
+	bricks0->MatCBIndex = 0;
+	bricks0->DiffuseSrvHeapIndex = 0;
+	bricks0->NormalSrvHeapIndex = 1;
+	bricks0->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	bricks0->FresnelR0 = XMFLOAT3(0.1f, 0.1f, 0.1f);
+	bricks0->Roughness = 0.3f;
+
+	auto tile0 = std::make_unique<Material>();
+	tile0->Name = "tile0";
+	tile0->MatCBIndex = 2;
+	tile0->DiffuseSrvHeapIndex = 2;
+	tile0->NormalSrvHeapIndex = 3;
+	tile0->DiffuseAlbedo = XMFLOAT4(0.9f, 0.9f, 0.9f, 1.0f);
+	tile0->FresnelR0 = XMFLOAT3(0.2f, 0.2f, 0.2f);
+	tile0->Roughness = 0.1f;
+
+	auto mirror0 = std::make_unique<Material>();
+	mirror0->Name = "mirror0";
+	mirror0->MatCBIndex = 3;
+	mirror0->DiffuseSrvHeapIndex = 4;
+	mirror0->NormalSrvHeapIndex = 5;
+	mirror0->DiffuseAlbedo = XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f);
+	mirror0->FresnelR0 = XMFLOAT3(0.98f, 0.97f, 0.95f);
+	mirror0->Roughness = 0.1f;
+	
+	auto sky = std::make_unique<Material>();
+	sky->Name = "sky";
+	sky->MatCBIndex = 4;
+	sky->DiffuseSrvHeapIndex = 6;
+	sky->NormalSrvHeapIndex = 7;
+	sky->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	sky->FresnelR0 = XMFLOAT3(0.1f, 0.1f, 0.1f);
+	sky->Roughness = 1.0f;
+
 	auto Eagle = std::make_unique<Material>();
 	Eagle->Name = "Eagle";
-	Eagle->MatCBIndex = 0;
+	Eagle->MatCBIndex = 5;
 	Eagle->DiffuseSrvHeapIndex = 0;
 	Eagle->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	Eagle->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
 	Eagle->Roughness = 0.2f;
 
-	mMaterials["Eagle"] = std::move(Eagle);
-
 	auto Raptor = std::make_unique<Material>();
 	Raptor->Name = "Raptor";
-	Raptor->MatCBIndex = 1;
+	Raptor->MatCBIndex = 6;
 	Raptor->DiffuseSrvHeapIndex = 1;
 	Raptor->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	Raptor->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
 	Raptor->Roughness = 0.2f;
 
-	mMaterials["Raptor"] = std::move(Raptor);
-
 	auto Desert = std::make_unique<Material>();
 	Desert->Name = "Desert";
-	Desert->MatCBIndex = 2;
+	Desert->MatCBIndex = 7;
 	Desert->DiffuseSrvHeapIndex = 2;
 	Desert->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	Desert->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
 	Desert->Roughness = 0.2f;
 
+	mMaterials["bricks0"] = std::move(bricks0);
+	mMaterials["tile0"] = std::move(tile0);
+	mMaterials["mirror0"] = std::move(mirror0);
+	mMaterials["sky"] = std::move(sky);
+	mMaterials["Eagle"] = std::move(Eagle);
+	mMaterials["Raptor"] = std::move(Raptor);
 	mMaterials["Desert"] = std::move(Desert);
-
 }
 
 void Game::BuildRenderItems()
@@ -658,17 +863,9 @@ void Game::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector
 		cmdList->IASetIndexBuffer(&ibv);
 		cmdList->IASetPrimitiveTopology(ri->PrimitiveType);
 
-		//step18
-		CD3DX12_GPU_DESCRIPTOR_HANDLE tex(mSrvDescriptorHeap->GetGPUDescriptorHandleForHeapStart());
-		tex.Offset(ri->Mat->DiffuseSrvHeapIndex, mCbvSrvDescriptorSize);
-
 		D3D12_GPU_VIRTUAL_ADDRESS objCBAddress = objectCB->GetGPUVirtualAddress() + ri->ObjCBIndex * objCBByteSize;
-		D3D12_GPU_VIRTUAL_ADDRESS matCBAddress = matCB->GetGPUVirtualAddress() + ri->Mat->MatCBIndex * matCBByteSize;
 
-		//step19
-		cmdList->SetGraphicsRootDescriptorTable(0, tex);
-		cmdList->SetGraphicsRootConstantBufferView(1, objCBAddress);
-		cmdList->SetGraphicsRootConstantBufferView(3, matCBAddress);
+		cmdList->SetGraphicsRootConstantBufferView(0, objCBAddress);
 
 		cmdList->DrawIndexedInstanced(ri->IndexCount, 1, ri->StartIndexLocation, ri->BaseVertexLocation, 0);
 	}
