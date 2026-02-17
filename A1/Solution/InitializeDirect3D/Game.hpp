@@ -65,16 +65,11 @@ private:
 
 	std::unordered_map<std::string, std::unique_ptr<MeshGeometry>> mGeometries;
 	std::unordered_map<std::string, std::unique_ptr<Material>> mMaterials;
-
-	//step7
 	std::unordered_map<std::string, std::unique_ptr<Texture>> mTextures;
-
 	std::unordered_map<std::string, ComPtr<ID3DBlob>> mShaders;
+	std::unordered_map<std::string, ComPtr<ID3D12PipelineState>> mPSOs;
 
 	std::vector<D3D12_INPUT_ELEMENT_DESC> mInputLayout;
-
-	ComPtr<ID3D12PipelineState> mOpaquePSO = nullptr;
-	ComPtr<ID3D12PipelineState> mSkyPSO = nullptr;
 
 	// List of all the render items.
 	std::vector<std::unique_ptr<RenderItem>> mAllRitems;

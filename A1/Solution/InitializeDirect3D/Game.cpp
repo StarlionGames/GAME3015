@@ -43,7 +43,7 @@ bool Game::Initialize()
 		return false;
 
 
-	mCamera.SetPosition(0, 5, 0);
+	mCamera.SetPosition(0, 2, -15);
 	mCamera.Pitch(3.14 / 2);
 
 	// Reset the command list to prep for initialization commands.
@@ -52,7 +52,6 @@ bool Game::Initialize()
 	// Get the increment size of a descriptor in this heap type.  This is hardware specific, 
 	// so we have to query this information.
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-	mCamera.SetPosition(0.0f, 2.0f, -15.0f);
 
 	LoadTextures();
 	BuildRootSignature();
@@ -122,7 +121,7 @@ void Game::Draw(const GameTimer& gt)
 
 	// A command list can be reset after it has been added to the command queue via ExecuteCommandList.
 	// Reusing the command list reuses memory.
-	ThrowIfFailed(mCommandList->Reset(cmdListAlloc.Get(), mOpaquePSO.Get()));
+	ThrowIfFailed(mCommandList->Reset(cmdListAlloc.Get(), mPSOs["opaque"].Get()));
 
 	//mScreenViewport.TopLeftX = 0.0f;
 	//mScreenViewport.TopLeftY = 0.0f;
@@ -156,23 +155,20 @@ void Game::Draw(const GameTimer& gt)
 	mCommandList->SetGraphicsRootConstantBufferView(1, passCB->GetGPUVirtualAddress());
 
 	mWorld.draw();
-	DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
-
 	auto matBuffer = mCurrFrameResource->MaterialBuffer->Resource();
 	mCommandList->SetGraphicsRootShaderResourceView(2, matBuffer->GetGPUVirtualAddress());
 
 	CD3DX12_GPU_DESCRIPTOR_HANDLE skyTexDescriptor(mSrvDescriptorHeap->GetGPUDescriptorHandleForHeapStart());
 	skyTexDescriptor.Offset(mSkyTexHeapIndex, mCbvSrvDescriptorSize);
 	mCommandList->SetGraphicsRootDescriptorTable(3, skyTexDescriptor);
-
 	mCommandList->SetGraphicsRootDescriptorTable(4, mSrvDescriptorHeap->GetGPUDescriptorHandleForHeapStart());
 
 	DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::Opaque]);
 
-	mCommandList->SetPipelineState(mSkyPSO.Get());
+	mCommandList->SetPipelineState(mPSOs["sky"].Get());
 	DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::Sky]);
 
-
+	
 	// Indicate a state transition on the resource usage.
 	auto transition2 = CD3DX12_RESOURCE_BARRIER::Transition(CurrentBackBuffer(),
 		D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);
@@ -533,6 +529,7 @@ void Game::BuildDescriptorHeaps()
 	    mTextures["DesertTex"]->Resource
 	};
 
+	auto skyCubeMap = mTextures["skyCubeMap"]->Resource;
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
 	srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
 	srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;
@@ -548,9 +545,6 @@ void Game::BuildDescriptorHeaps()
 		hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 	}
 
-	auto skyCubeMap = mTextures["skyCubeMap"]->Resource;
-	srvDesc = {};
-	srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
 	srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURECUBE;
 	srvDesc.TextureCube.MostDetailedMip = 0;
 	srvDesc.TextureCube.MipLevels = skyCubeMap->GetDesc().MipLevels;
@@ -732,7 +726,7 @@ void Game::BuildPSOs()
 	opaquePsoDesc.SampleDesc.Count = m4xMsaaState ? 4 : 1;
 	opaquePsoDesc.SampleDesc.Quality = m4xMsaaState ? (m4xMsaaQuality - 1) : 0;
 	opaquePsoDesc.DSVFormat = mDepthStencilFormat;
-	ThrowIfFailed(md3dDevice->CreateGraphicsPipelineState(&opaquePsoDesc, IID_PPV_ARGS(&mOpaquePSO)));
+	ThrowIfFailed(md3dDevice->CreateGraphicsPipelineState(&opaquePsoDesc, IID_PPV_ARGS(&mPSOs["opaque"])));
 
 	D3D12_GRAPHICS_PIPELINE_STATE_DESC skyPsoDesc = opaquePsoDesc;
 
@@ -750,7 +744,7 @@ void Game::BuildPSOs()
 		reinterpret_cast<BYTE*>(mShaders["skyPS"]->GetBufferPointer()),
 		mShaders["skyPS"]->GetBufferSize()
 	};
-	ThrowIfFailed(md3dDevice->CreateGraphicsPipelineState(&skyPsoDesc, IID_PPV_ARGS(&mSkyPSO)));
+	ThrowIfFailed(md3dDevice->CreateGraphicsPipelineState(&skyPsoDesc, IID_PPV_ARGS(&mPSOs["sky"])));
 
 }
 
@@ -836,6 +830,35 @@ void Game::BuildMaterials()
 
 void Game::BuildRenderItems()
 {
+	auto skyRitem = std::make_unique<RenderItem>();
+	XMStoreFloat4x4(&skyRitem->World, XMMatrixScaling(5000.0f, 5000.0f, 5000.0f));
+	skyRitem->TexTransform = MathHelper::Identity4x4();
+	skyRitem->ObjCBIndex = 0;
+	skyRitem->Mat = mMaterials["sky"].get();
+	skyRitem->Geo = mGeometries["boxGeo"].get();
+	skyRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+	skyRitem->IndexCount = skyRitem->Geo->DrawArgs["sphere"].IndexCount;
+	skyRitem->StartIndexLocation = skyRitem->Geo->DrawArgs["sphere"].StartIndexLocation;
+	skyRitem->BaseVertexLocation = skyRitem->Geo->DrawArgs["sphere"].BaseVertexLocation;
+
+	mRitemLayer[(int)RenderLayer::Sky].push_back(skyRitem.get());
+	mAllRitems.push_back(std::move(skyRitem));
+
+	auto boxRitem = std::make_unique<RenderItem>();
+	XMStoreFloat4x4(&boxRitem->World, XMMatrixScaling(2.0f, 1.0f, 2.0f) * XMMatrixTranslation(0.0f, 0.5f, 0.0f));
+	XMStoreFloat4x4(&boxRitem->TexTransform, XMMatrixScaling(1.0f, 0.5f, 1.0f));
+	boxRitem->ObjCBIndex = 1;
+	boxRitem->Mat = mMaterials["bricks0"].get();
+	boxRitem->Geo = mGeometries["boxGeo"].get();
+	boxRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+	boxRitem->IndexCount = boxRitem->Geo->DrawArgs["box"].IndexCount;
+	boxRitem->StartIndexLocation = boxRitem->Geo->DrawArgs["box"].StartIndexLocation;
+	boxRitem->BaseVertexLocation = boxRitem->Geo->DrawArgs["box"].BaseVertexLocation;
+
+	mRitemLayer[(int)RenderLayer::Opaque].push_back(boxRitem.get());
+	mAllRitems.push_back(std::move(boxRitem));
+
+	
 	mWorld.buildScene();
 
 	// All the render items are opaque.
