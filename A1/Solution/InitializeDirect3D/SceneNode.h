@@ -79,9 +79,9 @@ private:
 	virtual void			updateCurrent(const GameTimer& gt);
 	void					updateChildren(const GameTimer& gt);
 
-	virtual void			drawCurrent() const;
+	virtual void			DrawCurrent() const;
 	void					drawChildren() const;
-	virtual void			buildCurrent();
+	virtual void			BuildCurrent();
 	void					buildChildren();
 
 protected:
