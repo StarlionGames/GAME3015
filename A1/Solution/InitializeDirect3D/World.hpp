@@ -1,9 +1,9 @@
 #pragma once
 #include "SceneNode.hpp"
-#include "Sprite.h"
-#include "Player.h"
-#include "Enemy.h"
+#include "Player.hpp"
+#include "Enemy.hpp"
 #include "Game.hpp"
+#include "Sprite.h"
 
 class World
 {

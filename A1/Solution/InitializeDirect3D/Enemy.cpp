@@ -1,15 +1,16 @@
-#include "Enemy.h"
+//#include "Entity.hpp"
+#include "Enemy.hpp"
 #include "Game.hpp"
 
 Enemy::Enemy(Game* game) : Entity(game) {
+	mSprite = "Raptor";
+}
+
+void Enemy::drawCurrent() const {
 
 }
 
-void Enemy::DrawCurrent() const {
-
-}
-
-void Enemy::BuildCurrent() 
+void Enemy::buildCurrent() 
 {
 	auto render = std::make_unique<RenderItem>();
 	renderer = render.get();

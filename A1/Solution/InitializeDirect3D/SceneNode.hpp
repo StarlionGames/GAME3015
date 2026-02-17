@@ -5,7 +5,6 @@
 #include "../../Common/GeometryGenerator.h"
 #include "../../Common/Camera.h"
 #include "FrameResource.h"
-#include "Game.hpp"
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
@@ -48,6 +47,8 @@ struct RenderItem
 	int BaseVertexLocation = 0;
 };
 
+class Game;
+
 class SceneNode
 {
 public:
@@ -79,9 +80,9 @@ private:
 	virtual void			updateCurrent(const GameTimer& gt);
 	void					updateChildren(const GameTimer& gt);
 
-	virtual void			DrawCurrent() const;
+	virtual void			drawCurrent() const;
 	void					drawChildren() const;
-	virtual void			BuildCurrent();
+	virtual void			buildCurrent();
 	void					buildChildren();
 
 protected:

@@ -5,13 +5,13 @@ Sprite::Sprite(Game* game) : Entity(game)
 {
 }
 
-void Sprite::DrawCurrent() const 
+void Sprite::drawCurrent() const 
 {
 	renderer->World = getTransform();
 	renderer->NumFramesDirty++;
 }
 
-void Sprite::BuildCurrent() 
+void Sprite::buildCurrent() 
 {
 	auto render = std::make_unique<RenderItem>();
 	renderer = render.get();

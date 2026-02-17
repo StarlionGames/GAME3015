@@ -30,7 +30,7 @@ void World::buildScene()
 	//mPlayerAircraft->setVelocity(mScrollSpeed, 0.0, 0.0);
 	mSceneGraph->attachChild(std::move(player));
 
-	std::unique_ptr<Enemy> enemy1(new Enemy());
+	std::unique_ptr<Enemy> enemy1(new Enemy(mGame));
 	auto raptor = enemy1.get();
 	raptor->setPosition(0.5, 0, 1);
 	raptor->setScale(1.0, 1.0, 1.0);

@@ -49,11 +49,11 @@ void SceneNode::updateChildren(const GameTimer& gt)
 
 void SceneNode::draw() const
 {
-	DrawCurrent();
+	drawCurrent();
 	drawChildren();
 }
 
-void SceneNode::DrawCurrent() const
+void SceneNode::drawCurrent() const
 {
 	//Empty for now
 }
@@ -68,11 +68,11 @@ void SceneNode::drawChildren() const
 
 void SceneNode::build()
 {
-	BuildCurrent();
+	buildCurrent();
 	buildChildren();
 }
 
-void SceneNode::BuildCurrent()
+void SceneNode::buildCurrent()
 {
 	//Empty for now
 }

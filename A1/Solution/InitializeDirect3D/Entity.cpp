@@ -1,30 +1,31 @@
 #include "Entity.hpp"
+#include "Game.hpp"
 
-Entity::Entity(Game* game) : SceneNode(game), velocity(0,0)
+Entity::Entity(Game* game) : SceneNode(game), mVelocity(0,0)
 {
 }
 
-void Entity::SetVelocityVector2(XMFLOAT2 v) 
+void Entity::setVelocity(XMFLOAT2 v) 
 {
-	velocity = v;
+	mVelocity = v;
 }
 
-void Entity::SetVelocityXY(float x, float y)
+void Entity::setVelocity(float x, float y)
 {
-	velocity.x = x;
-	velocity.y = y;
+	mVelocity.x = x;
+	mVelocity.y = y;
 }
 
-XMFLOAT2 Entity::GetVelocity() const
+XMFLOAT2 Entity::getVelocity() const
 {
-	return velocity;
+	return mVelocity;
 }
 
-void Entity::UpdateCurrent(const GameTimer& timer)
+void Entity::updateCurrent(const GameTimer& timer)
 {
 	XMFLOAT2 velo;
-	velo.x = velocity.x * timer.DeltaTime();
-	velo.y = velocity.y * timer.DeltaTime();
+	velo.x = mVelocity.x * timer.DeltaTime();
+	velo.y = mVelocity.y * timer.DeltaTime();
 
 	move(velo.x, velo.y, 0);
 

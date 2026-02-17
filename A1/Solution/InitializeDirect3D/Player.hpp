@@ -8,11 +8,11 @@ public:
 	Player(Game* game);
 
 private:
-	virtual void DrawCurrent() const;
-	virtual void BuildCurrent();
+	virtual void drawCurrent() const;
+	virtual void buildCurrent();
 	
 	// --- variables ---
 
-	std::string sprite;
+	std::string mSprite;
 };
 

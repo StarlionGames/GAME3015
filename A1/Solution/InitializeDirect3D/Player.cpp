@@ -1,15 +1,15 @@
-#include "Player.h"
+#include "Player.hpp"
 #include "Game.hpp"
 
 Player::Player(Game* game) : Entity(game) {
-	sprite = "player"; // change this with the name of the texture lol
+	mSprite = "Eagle"; // change this with the name of the texture lol
 }
 
-void Player::DrawCurrent() const
+void Player::drawCurrent() const
 {
 }
 
-void Player::BuildCurrent()
+void Player::buildCurrent()
 {
 	auto render = std::make_unique<RenderItem>();
 	renderer = render.get();

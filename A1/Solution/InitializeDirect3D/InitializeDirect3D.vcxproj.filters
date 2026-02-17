@@ -42,9 +42,6 @@
     <ClCompile Include="..\..\Common\MathHelper.cpp">
       <Filter>Engine\Common</Filter>
     </ClCompile>
-    <ClCompile Include="NormalMapApp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FrameResource.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -110,13 +107,13 @@
     <ClInclude Include="SceneNode.hpp">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
+    <ClInclude Include="Enemy.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="World.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="Player.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
